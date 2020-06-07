@@ -1,0 +1,228 @@
+/* Element selectors */
+
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+div {
+  background-color: white;
+}
+
+header {
+  background-color: white;
+  color: black;
+  font-size: 36px;
+  text-align: center;
+  padding: 36px;
+}
+
+.row {
+  width: 100%;
+}
+
+p {
+  /*border: 1px solid black;*/
+  background-color: gray;
+  width: 90%;
+  height: auto;
+  /*margin-right: auto;*/
+  margin-top: auto;
+  margin-left: auto;
+  padding-top: 36px;
+  padding-bottom: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+}
+
+section > div {
+  border: 1px solid black;
+  width: 33%;
+  float: right;
+  position: relative;
+  text-align: center;
+  font-size: 125%;
+  background-color: brown;
+}
+
+section {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  float: left;
+  /*margin: 10px;*/
+  padding: 18px;
+}
+
+/* Class Selectors .class {} */
+
+/* ID- Selectors #name{} */
+
+/* @Media queries */
+
+/*Desktop*/
+@media (min-width: 992px) {
+  .col-desktop-1,
+  .col-desktop-2,
+  .col-desktop-3,
+  .col-desktop-4,
+  .col-desktop-5,
+  .col-desktop-6,
+  .col-desktop-7,
+  .col-desktop-8,
+  .col-desktop-9,
+  .col-desktop-10,
+  .col-desktop-11,
+  .col-desktop-12 {
+    float: left;
+    /*border: 1px solid green;*/
+  }
+  .col-desktop-2 {
+    width: 16.66%;
+    margin: auto;
+  }
+  .col-desktop-3 {
+    width: 25%;
+    margin: auto;
+  }
+  .col-desktop-4 {
+    width: 33.33%;
+    margin: auto;
+  }
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-tablet-1,
+  .col-tablet-2,
+  .col-tablet-3,
+  .col-tablet-4,
+  .col-tablet-5,
+  .col-tablet-6,
+  .col-tablet-7,
+  .col-tablet-8,
+  .col-tablet-9,
+  .col-tablet-10,
+  .col-tablet-11,
+  .col-tablet-12 {
+    float: left;
+    /*border: 1px solid green;*/
+  }
+  .col-tablet-3 {
+    width: 25%;
+    margin: auto;
+  }
+  .col-tablet-6 {
+    width: 50%;
+    margin: auto;
+  }
+  .col-tablet-12 {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+/*Mobile*/
+@media (max-width: 767px) {
+  /*is this necessary?*/
+}
+
+/*_____________________________________________________________________________
+/* Semi colons not required, can all be on same line, but bad style so use the colons and newlines 
+/* Can group them too!
+    div, .blue { color: blue; } -> both divs and items of class 'blue' will be colored blue!
+    
+    Element WITH Class selector
+        p.big{font-size: 20px;} -> Every p that has class big. no spaces  p(dot)big, or "paragraph of class b"
+    
+    Child Selector  
+        article > p {color:blue;} -> p's that are direct children of <article> tag. 
+    
+    Descendant Selector
+        article p {color:blue;}  -> space, no comma,  any p descendant of <article> selector.
+
+
+    NOTE! Not limited to element selectors, can be paired with class and ID selectors as well
+        examples: .colored p{color:blue;} -> every p that is inside (at any level) element of class = "colored"
+        examples: article > .colored {color:blue;} -> every class "colored" that's a direct child of <article> is blue
+
+
+/* origin precendenace, merge when no conflict (see dev tools, elements, styles), inheritance, DOM Tree, children inherit property of element.
+/* Specificity, style, ID, class, pseudo-class, attribute, # of elements ... see Week 2 Notes Pt.2 for examples
+/* If in need of an override, !important, disregards specificity, avoid using it though
+
+/* Property
+    font-family: "serif/sanserif"
+    color: #hexadec or fixed constants
+    font-style: specifies italics, normal
+    font-weight: normal to bold, can use numbers for varying boldness, bold is predefined keyword
+    font-size: 24px; given in pixels, default is around 16. 
+    text-transform: capitalize, lowercase, all kinds of things go here
+    text-align: center, justify, left, right
+
+    relative sizing
+    font-size: 120%; percent scaling
+    style="font-size: 2em;" relative sizing
+
+    typically apply font scaling to the "most parent tag"
+
+    background-color: blue;
+    background-image: url("abc.png") -> url relative to the way the css file is served
+    background-repeat : 
+    background-position: horizontal value, vertical value
+
+    can combine with spaces, same line, no commas, just spaces and attribute flags such as "no-repeat" "right" "center" "blue"
+
+/* Box model
+    padding, border, margins, content (lecture 19)
+    
+    padding is default, you can style the body such that margin, padding, set to 0, or Xpx from a cardinal direction.
+
+    box-sizing:border-box; -> standard though in most frameworks
+    box-sizing: content-box; -> default, that's where sizing can mess us up since we're influencing the content box rather than the whole.
+
+    but because box-sizing is a property of every html element, though not inherited, we can't just put it in the "body" tag styling...
+    so we use 
+
+    * -> star selector, goes and selects every element, and applies the css properties to them, seems like a preprocessor type deal where
+        it stuffs itself in every element styling. Use it to make sweeping changes, to defaults and all...
+
+    Margins collapse vertically, append horizontally. 
+
+/* Floating
+    float:right;
+        1. ements move up, floats are out of Document flow (DOM)
+        2. Second element moves up to original spot
+    
+    section{clear:left;} -> section element announcing nothing should float to the left
+    clear: both (for example see Lecture 21)
+
+
+/*Positioning 
+    p {position:relative;} edges like an anchor for future offsets "from top" "from left", even though offset, original space is occupied
+
+    p{
+        position: absolute -> yoinks it out of document flow
+        bottom: 10px -> once yoinked, following elements basically ignore its existence and slide in
+        right: 10px;
+    }
+
+    recap:  
+    moving a relative element, holds an "anchor" in the document flow
+    moving an absolute element, yanks it out of flow
+
+
+/*Media Queries -> allow you to group styles together and target them to devices based on criteria like resolution
+    @media (max-width: 767px){ -> media feature (resolves to true or false)
+        max-width
+        min-width
+        orientation
+        screen
+        print (all media queries, first 2 most common, and most relevant for us)
+
+    can be combined with 'and' or ',' [logical or]  see lecture 23 for example*/
