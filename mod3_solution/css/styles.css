@@ -1,3 +1,32 @@
 /* Desktop Bootstrap md -based classes */
 /* Tablet Bootstrap sm -based classes */
 /* Mobile Bootstrap xs -based classes */ 
+
+*, *::before, *::after{
+    box-sizing:border-box;
+}
+
+
+/** Header **/
+#food_llc_header{
+    background-color: gray;
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-brand {
+    padding-top: auto;
+}
+
+a.navbar-brand{
+    color:white;
+}
+
+button.navbar-toggler{
+    border-color: black;
+    float: right;
+}
+
+row {
+    width:100%;
+}
