@@ -1,6 +1,8 @@
 // console.log('Hello');
 // console.log(helloSpeaker.speak("james"));
 
+console.log("Hello fellow coursera student :-) 1 more week to go!!!");
+
 (function () {
 
     var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
