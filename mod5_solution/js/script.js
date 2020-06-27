@@ -120,6 +120,8 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
 
+      chosenCategoryShortName = "'"+chosenCategoryShortName+"'";
+      //Needed to add quotes?? this was also a minor annoyance
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName",chosenCategoryShortName);
 
 
